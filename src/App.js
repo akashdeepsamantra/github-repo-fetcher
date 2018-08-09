@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Home from './components/Home';
 import { getRepos, getUserData } from './util/api';
+import Routes from './components/Routes';
 
 class App extends Component {
   componentDidMount() {
@@ -11,7 +12,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Home />
+        <Routes />
       </div>
     );
   }

@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 
-import Spinner from './Spinner';
-
-class Home extends Component {
+class Repos extends Component {
   render() {
     return (
       <div>
-        <Spinner />
+        Repos
       </div>
     );
   }
 }
 
-export default Home;
+export default Repos;

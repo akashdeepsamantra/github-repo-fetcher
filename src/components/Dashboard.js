@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 
-import Spinner from './Spinner';
-
-class Home extends Component {
+class Dashboard extends Component {
   render() {
     return (
       <div>
-        <Spinner />
+        Dashboard
       </div>
     );
   }
 }
 
-export default Home;
+export default Dashboard;

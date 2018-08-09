@@ -5,13 +5,9 @@ body {
   background-color: #222629;
 }
 
-.App {
-  
-}
-
 form {
   display: flex;
-  height: 700px;
+  height: 600px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -50,4 +46,9 @@ button:hover {
 
 h2 {
   color: #fff;
+}
+
+.bar {
+  height: 50px;
+  background-color: #222629;
 }

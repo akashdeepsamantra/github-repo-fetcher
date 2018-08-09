@@ -10,7 +10,6 @@ class Home extends Component {
   };
 
   render() {
-    console.log(this.state.username);
     return (
       <form>
         <h2>Welcome to Github repo fetcher</h2>

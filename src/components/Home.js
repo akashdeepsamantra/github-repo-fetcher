@@ -1,13 +1,27 @@
 import React, { Component } from 'react';
 
-import Spinner from './Spinner';
-
 class Home extends Component {
+  state = {
+    username: ''
+  };
+
+  changeUsernameHandler = event => {
+    this.setState({ username: event.target.value });
+  };
+
   render() {
+    console.log(this.state.username);
     return (
-      <div>
-        <Spinner />
-      </div>
+      <form>
+        <h2>Welcome to Github repo fetcher</h2>
+        <input
+          type="text"
+          placeholder="Enter username here!"
+          value={this.state.username}
+          onChange={this.changeUsernameHandler}
+        />
+        <button type="submit">Submit</button>
+      </form>
     );
   }
 }

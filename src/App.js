@@ -6,13 +6,13 @@ import Routes from './components/Routes';
 
 class App extends Component {
   componentDidMount() {
-    getRepos("akashdeepsamantra")
+    getRepos("akashdeepsamanra")
       .then(response => console.log(response))
   }
   render() {
     return (
       <div className="App">
-        <Routes />
+        <Home />
       </div>
     );
   }

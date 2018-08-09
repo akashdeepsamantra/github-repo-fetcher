@@ -8,3 +8,46 @@ body {
 .App {
   
 }
+
+form {
+  display: flex;
+  height: 700px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form input {
+  margin: 2px;
+  width: 40%;
+  border: 5px solid none;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 18px;
+  box-sizing: border-box;
+  transition: .3s;
+  outline: none;
+}
+
+input:focus {
+  box-shadow: 0px 0px 5px 2px #6B6E70;
+}
+
+button {
+  margin: 6px;
+  padding: 5px;
+  font-size: 20px;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #86C232;
+  outline-width: 0;
+  border: none;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+h2 {
+  color: #fff;
+}

@@ -56,11 +56,6 @@ h2 {
   background-color: #222629;
 }
 
-.bar {
-  height: 60px;
-  background-color: #222629;
-}
-
 .repos {
   margin: 5px;
   padding: 0;
@@ -70,4 +65,21 @@ h2 {
 .errorMsg {
   color: red;
   font-size: 11px;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #222629;
+}
+
+.header a {
+  text-decoration: none;
+  float: left;
+  font-size: 20px;
+  color: #fff;
+  padding: 18px 15px;
+}
+
+.header a::selection {
+  background-color: #6B6E70;
 }

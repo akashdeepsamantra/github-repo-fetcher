@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router';
 
 import { getRepos } from '../util/api';
 
@@ -7,7 +8,9 @@ class Home extends Component {
     super(props);
     this.state = {
       username: '',
-      showError: false
+      showError: false,
+      redirect: false,
+      data: null
     };
   }
 
@@ -22,7 +25,10 @@ class Home extends Component {
           if (response.status === 404) {
             this.setState({ showError: true })
           }
-          console.log(response)
+          this.setState({ 
+            redirect: true,
+            data: response
+          })
         });
     }
     else {
@@ -31,7 +37,7 @@ class Home extends Component {
   }
 
   showErrorMsg = () => {
-    const msg = this.state.username === '' ? "Username can not be empty" : "Please enter valid username"
+    const msg = this.state.username === '' ? "Username can not be empty" : "Please enter valid username";
     if (this.state.showError) {
       return (
         <p className='errorMsg'>{msg}</p>
@@ -41,6 +47,16 @@ class Home extends Component {
   }
 
   render() {
+    if (this.state.redirect) {
+      return (
+        <Redirect to={{
+          pathname: '/dashboard',
+          state: { referrer: this.state.data }
+        }}
+        />
+      );
+    }
+
     return (
       <form className="home form">
         <h2>Welcome to Github repo fetcher</h2>
@@ -51,7 +67,7 @@ class Home extends Component {
           onChange={this.changeUsernameHandler}
         />
         <this.showErrorMsg />
-        <button type="button" onClick={this.fetchData}>Submit</button>
+        <button type="button" onClick={this.fetchData}>Submit</button>  
       </form>
     );
   }

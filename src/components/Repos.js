@@ -4,7 +4,7 @@ class Repos extends Component {
   render() {
     return (
       <div>
-        Repos
+
       </div>
     );
   }

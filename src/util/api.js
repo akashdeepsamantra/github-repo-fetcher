@@ -7,7 +7,9 @@ export { getRepos, getUserData };
 
 function getRepos(username) {
   const url = `${BASE_URL}/users/${username}/repos?per_page=250`;
-  return axios.get(url).then(response => response.data);
+  return axios.get(url)
+      .then(response => response)
+      .catch((error) => (error.response));
 }
 
 function getUserData(username) {

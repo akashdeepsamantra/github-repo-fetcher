@@ -5,7 +5,6 @@ import Header from './Header';
 const Org = () => {
   return (
     <div>
-      <Header />
       Org
     </div>
   );

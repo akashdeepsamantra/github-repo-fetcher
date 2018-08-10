@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router';
 
 import { getRepos } from '../util/api';
+import Dashboard from './Dashboard';
 
 class Home extends Component {
   constructor(props){
@@ -49,13 +50,19 @@ class Home extends Component {
   render() {
     if (this.state.redirect) {
       return (
-        <Redirect to={{
-          pathname: '/profile',
-          state: { referrer: this.state.data }
-        }}
-        />
+        <Dashboard />
       );
     }
+
+    // if (this.state.redirect) {
+    //   return (
+    //     <Redirect to={{
+    //       pathname: '/profile',
+    //       state: { referrer: this.state.data }
+    //     }}
+    //     />
+    //   );
+    // }
 
     return (
       <form className="home form">

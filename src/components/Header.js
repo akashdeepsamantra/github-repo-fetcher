@@ -1,12 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <div className='header'>
       <div>
-        <a href="/profile">Profile</a>
-        <a href="/repos">Repos</a>
-        <a href="/org">Organisation</a>
+        <Link to="/profile">Profile</Link>
+        <Link to="/repos">Repos</Link>
+        <Link to="/org">Organisation</Link>
       </div>
     </div>
   );

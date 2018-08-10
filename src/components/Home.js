@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router';
 
 import { getRepos } from '../util/api';
 import Dashboard from './Dashboard';
 
 class Home extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      username: '',
+      username: 'akashdeepsamantra',
       showError: false,
       redirect: false,
       data: null
@@ -21,48 +20,35 @@ class Home extends Component {
 
   fetchData = () => {
     if (this.state.username !== '') {
-      getRepos(this.state.username)
-        .then(response => {
-          if (response.status === 404) {
-            this.setState({ showError: true })
-          }
-          this.setState({ 
-            redirect: true,
-            data: response
-          })
+      getRepos(this.state.username).then(response => {
+        if (response.status === 404) {
+          this.setState({ showError: true });
+        }
+        this.setState({
+          redirect: true,
+          data: response
         });
+      });
+    } else {
+      this.setState({ showError: true });
     }
-    else {
-      this.setState({ showError: true })
-    }
-  }
+  };
 
   showErrorMsg = () => {
-    const msg = this.state.username === '' ? "Username can not be empty" : "Please enter valid username";
+    const msg =
+      this.state.username === ''
+        ? 'Username can not be empty'
+        : 'Please enter valid username';
     if (this.state.showError) {
-      return (
-        <p className='errorMsg'>{msg}</p>
-      );
+      return <p className="errorMsg">{msg}</p>;
     }
     return null;
-  }
+  };
 
   render() {
     if (this.state.redirect) {
-      return (
-        <Dashboard />
-      );
+      return <Dashboard data={this.state.data} />;
     }
-
-    // if (this.state.redirect) {
-    //   return (
-    //     <Redirect to={{
-    //       pathname: '/profile',
-    //       state: { referrer: this.state.data }
-    //     }}
-    //     />
-    //   );
-    // }
 
     return (
       <form className="home form">
@@ -74,7 +60,9 @@ class Home extends Component {
           onChange={this.changeUsernameHandler}
         />
         <this.showErrorMsg />
-        <button type="button" onClick={this.fetchData}>Submit</button>  
+        <button type="button" onClick={this.fetchData}>
+          Submit
+        </button>
       </form>
     );
   }

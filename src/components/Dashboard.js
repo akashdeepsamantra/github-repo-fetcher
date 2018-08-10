@@ -3,13 +3,13 @@ import React from 'react';
 import Routes from './Routes';
 import Header from './Header';
 
-const Dashboard = () => {
+const Dashboard = props => {
   return (
     <div>
       <Header />
-      <Routes />
+      <Routes {...props}/>
     </div>
   );
-}
+};
 
 export default Dashboard;

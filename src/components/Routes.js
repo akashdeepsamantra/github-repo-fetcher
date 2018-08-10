@@ -1,22 +1,31 @@
 import React, { Component } from 'react';
-import { Router, Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import Repos from './Repos';
 import Org from './Org';
 import Profile from './Profile';
-import Home from './Home';
 
 class Routes extends Component {
-  render() {
+  render(props) {
     return (
-        <Switch>
-          <Route exact path="/" render={() => (
-            <Redirect to='/profile' />
-          )} />
-          <Route exact path="/profile" component={Profile} />
-          <Route exact path="/repos" component={Repos} />
-          <Route exact path="/org" component={Org} />
-        </Switch>
+      <Switch>
+        <Route exact path="/" render={() => <Redirect to="/profile" />} />
+        <Route
+          exact
+          path="/profile"
+          render={props => <Profile {...this.props} {...props} />}
+        />
+        <Route
+          exact
+          path="/repos"
+          render={props => <Repos {...this.props} {...props} />}
+        />
+        <Route
+          exact
+          path="/org"
+          render={props => <Org {...this.props} {...props} />}
+        />
+      </Switch>
     );
   }
 }

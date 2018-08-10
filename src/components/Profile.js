@@ -3,16 +3,16 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 
-class Dashboard extends Component {
+class Profile extends Component {
   render() {
     return (
       <div>
         <Header />
-        Dashboard
+        Profile
         <Footer />
       </div>
     );
   }
 }
 
-export default Dashboard;
+export default Profile;

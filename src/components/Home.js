@@ -50,7 +50,7 @@ class Home extends Component {
     if (this.state.redirect) {
       return (
         <Redirect to={{
-          pathname: '/dashboard',
+          pathname: '/profile',
           state: { referrer: this.state.data }
         }}
         />

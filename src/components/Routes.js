@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import Repos from './Repos';
 import Org from './Org';
-import Dashboard from './Dashboard';
+import Profile from './Profile';
 import Home from './Home';
 
 class Routes extends Component {
@@ -11,7 +11,7 @@ class Routes extends Component {
     return (
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/profile" component={Profile} />
         <Route exact path="/repos" component={Repos} />
         <Route exact path="/org" component={Org} />
       </Switch>

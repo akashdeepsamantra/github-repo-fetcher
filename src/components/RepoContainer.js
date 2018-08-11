@@ -5,7 +5,7 @@ import CardContent from '@material-ui/core/CardContent';
 
 const RepoContainer = (props) => {
   return (
-    <div>
+    <div className="card-style">
       <Card>
         <CardContent className="card">
           <h3>{props.name}</h3>

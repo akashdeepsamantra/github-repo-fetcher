@@ -32,7 +32,7 @@ class Repos extends Component {
             onChange={this.changefilterKeywordHandler}
           />
         </div>
-        <div className="repo-container">
+        <div className="margin">
           <Grid container spacing={24}>
             {
               selectedRepos.map(repo => {

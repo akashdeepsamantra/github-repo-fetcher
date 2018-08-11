@@ -50,7 +50,7 @@ button:hover {
   background-color: #86C232;
 }
 
-h2 {
+.home h2 {
   color: #fff;
 }
 
@@ -130,7 +130,7 @@ strong {
 }
 
 .margin {
-  margin: 2px;
+  margin: 25px;
 }
 
 .user-data {
@@ -149,12 +149,20 @@ strong {
   /* border-radius: 15px; */
 }
 
+.orgcard-container {
+  border: 1px solid #000;
+  border-radius: 15px;
+  height: 200px;
+  padding: 5px;
+}
+
 .data {
   padding-top: 50px;
 }
 
 .card {
   background-color: rgba(205, 210, 212, 0.774);
+  height: 130px;
   /* border-radius: 15px; */
 }
 
@@ -187,4 +195,11 @@ strong {
 
 .filterTextField {
   margin: 10px;
+}
+
+.card-style {
+  border: 1px solid #000;
+  border-radius: 5px;
+  height: 170px;
+  background-color: rgba(205, 210, 212, 0.774);
 }

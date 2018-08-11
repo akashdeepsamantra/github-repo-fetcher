@@ -11,7 +11,7 @@ body {
   align-items: center;
 }
 
-.form input {
+input {
   margin: 2px;
   width: 40%;
   border: 5px solid none;
@@ -143,6 +143,48 @@ strong {
   border-radius: 15px;
 }
 
+.repo-container {
+  border: 1px solid #222629;
+  margin: 25px;
+  /* border-radius: 15px; */
+}
+
 .data {
   padding-top: 50px;
+}
+
+.card {
+  background-color: rgba(205, 210, 212, 0.774);
+  /* border-radius: 15px; */
+}
+
+.card p {
+  font-size: 15px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.flex-container > p {
+  width: 33.3%;
+  text-align: center;
+  margin: 1px;
+  padding: 0;
+}
+
+.small-image {
+  height: 15px;
+  width: 15px;
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+}
+
+.filterTextField {
+  margin: 10px;
 }

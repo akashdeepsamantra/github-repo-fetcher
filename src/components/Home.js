@@ -7,7 +7,7 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: 'akashdeepsamantra',
+      username: 'alanrubin',
       showError: false,
       redirect: false,
       data: null
@@ -47,7 +47,7 @@ class Home extends Component {
 
   render() {
     if (this.state.redirect) {
-      return <Dashboard data={this.state.data} />;
+      return <Dashboard data={this.state.data} username={this.state.username} />;
     }
 
     return (

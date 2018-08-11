@@ -14,13 +14,20 @@ class Repos extends Component {
 
   render() {
     const repos = this.props.data;
+    let selectedRepos = repos;
+    if (this.state.filterKeyword !== '') {
+      selectedRepos = repos.filter(repo => {
+        return repo.name.includes(this.state.filterKeyword) ? repo : null
+      });
+    }
+
     return (
       <div>
         <div className="filter">
           <input
             className="filterTextField"
             type="text"
-            placeholder="Enter repo to filter"
+            placeholder="Enter repository name to filter"
             value={this.state.username}
             onChange={this.changefilterKeywordHandler}
           />
@@ -28,7 +35,7 @@ class Repos extends Component {
         <div className="repo-container">
           <Grid container spacing={24}>
             {
-              repos.map(repo => {
+              selectedRepos.map(repo => {
                 return (
                   <Grid item xs={12} sm={6} key={repo.id}>
                     <RepoContainer

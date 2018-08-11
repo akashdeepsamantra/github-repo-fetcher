@@ -13,7 +13,7 @@ const RepoContainer = (props) => {
           <div className="flex-container">
             <p>{props.language}</p>
             <p>
-              <img className="small-image" src={require('../assets/star-24px.svg')} />
+              <img className="small-image" src={require('../assets/star-24px.svg')} alt=''/>
               {props.starCount}
             </p>
             <p>{props.forkCount}</p>
@@ -26,8 +26,8 @@ const RepoContainer = (props) => {
 
 RepoContainer.propTypes = {
   name: PropTypes.string.isRequired,
-  desc: PropTypes.string.isRequired,
-  language: PropTypes.string.isRequired,
+  desc: PropTypes.string,
+  language: PropTypes.string,
   starCount: PropTypes.number.isRequired,
   forkCount: PropTypes.number.isRequired
 }

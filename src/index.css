@@ -25,9 +25,9 @@ body {
 
 img {
   border-radius: 15px;
-  height: 290px;
-  width: 300px;
-  margin: 0 15px;
+  height: 100%;
+  width: 100%;
+  /* margin: 0 15px; */
 }
 
 input:focus {
@@ -92,12 +92,11 @@ h2 {
 }
 
 .screen {
-  margin: 70px;
+  margin: 3%;
 }
 
 .float-left {
   float: left;
-  width: 24%;
 }
 
 .float-right {
@@ -117,16 +116,16 @@ p.opacity{
   opacity: 0.5;
 }
 
-.profile a {
+a {
   text-decoration: none;
   color: black;
 }
 
-.profile a:hover {
+a:hover {
   color: blue;
 }
 
-p strong {
+strong {
   margin: 10px 5px 10px 25px;
 }
 
@@ -136,4 +135,14 @@ p strong {
 
 .user-data {
   border: 2px solid #000;
+}
+
+.data-container {
+  border: 1px solid #222629;
+  margin: 25px;
+  border-radius: 15px;
+}
+
+.data {
+  padding-top: 50px;
 }

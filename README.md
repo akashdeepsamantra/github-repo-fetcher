@@ -5,7 +5,7 @@ This is the second project in udacity react nanodegree course. User can answer q
 ## Installation
 
 clone the project from github
-`git clone https://github.com/akashdeepsamantra/udacity-would-you-rather.git`
+`git clone https://github.com/akashdeepsamantra/github-repo-fetcher.git`
 
 To install node modules:
 `npm install`

@@ -12,25 +12,30 @@ class Home extends Component {
       showError: false,
       redirect: false,
       data: null,
-      loading: false
+      loading: false,
+      timer: 0
     };
   }
 
   changeUsernameHandler = event => {
-    this.setState({ username: event.target.value });
+    this.setState({ username: event.target.value, showError: false });
   };
 
   fetchData = () => {
-    this.setState({ loading: true });
     if (this.state.username !== '') {
       getRepos(this.state.username).then(response => {
-        if (response.status === 404) {
-          this.setState({ showError: true });
+        if (response.status !== 200) {
+          console.log(response.status);
+          this.setState({ showError: true, loading: false });
+          console.log(this.state.loading)
         }
-        this.setState({
-          redirect: true,
-          data: response
-        });
+        else {
+          this.setState({ loading: true });
+          this.setState({
+            redirect: true,
+            data: response.data
+          });
+        }
       });
     } else {
       this.setState({ showError: true });
@@ -52,9 +57,11 @@ class Home extends Component {
     if (this.state.redirect) {
       return <Dashboard data={this.state.data} username={this.state.username} />;
     }
-
+    console.log(this.state.loading);
     if (this.state.loading) {
-      return <Spinner />
+      return (
+        <Spinner />
+      );
     }
 
     return (

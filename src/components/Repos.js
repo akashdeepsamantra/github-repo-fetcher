@@ -15,8 +15,9 @@ class Repos extends Component {
 
   render() {
     const repos = this.props.data;
+    console.log(repos.length);
     if (repos.length === 0) {
-      return <EmptyPage />
+      return <EmptyPage />;
     } 
     let selectedRepos = repos;
     if (this.state.filterKeyword !== '') {

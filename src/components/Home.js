@@ -21,11 +21,17 @@ class Home extends Component {
     this.setState({ username: event.target.value, showError: false });
   };
 
+  onKeyPressHandler = (event) => {
+    if (event.which === 13) {
+      event.preventDefault();
+      this.fetchData();
+    }
+  }
+
   fetchData = () => {
     if (this.state.username !== '') {
       getRepos(this.state.username).then(response => {
         if (response.status !== 200) {
-          console.log(response.status);
           this.setState({ showError: true, loading: false });
           console.log(this.state.loading)
         }
@@ -57,7 +63,7 @@ class Home extends Component {
     if (this.state.redirect) {
       return <Dashboard data={this.state.data} username={this.state.username} />;
     }
-    console.log(this.state.loading);
+
     if (this.state.loading) {
       return (
         <Spinner />
@@ -65,7 +71,7 @@ class Home extends Component {
     }
 
     return (
-      <form className="home form">
+      <form className="home form" onKeyPress={this.onKeyPressHandler}>
         <h2>Welcome to Github repo fetcher</h2>
         <input
           type="text"

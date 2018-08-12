@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Routes from './Routes';
+import Home from './Home';
 import Header from './Header';
 import { getUserData } from '../util/api';
 import Spinner from './Spinner';
@@ -8,7 +9,8 @@ import Spinner from './Spinner';
 class Dashboard extends Component {
   state = {
     userData: null,
-    loading: true
+    loading: true,
+    goToHome: false
   };
 
   componentWillMount() {
@@ -17,16 +19,22 @@ class Dashboard extends Component {
     });
   }
 
+  tryAgainHandler = () => {
+    this.setState({ goToHome: true });
+  }
+
   render() {
     if (this.state.loading) {
       return (
         <Spinner />
       );
     }
-
+    if (this.state.goToHome) {
+      return <Home />
+    }
     return (
       <div>
-        <Header username={this.props.username} />
+        <Header username={this.props.username} tryAgainHandler={this.tryAgainHandler}/>
         <Routes {...this.props} {...this.state.userData} />
       </div>
     );

@@ -6,8 +6,9 @@ import Container from './Container';
 
 const Profile = props => {
   const { user } = props;
-  console.log(user);
-  return <div className="data-container">
+
+  return ( 
+    <div className="data-container">
       <Grid container spacing={24}>
         <Grid item xs={3}>
           <img src={user.avatar_url} alt="Profile pic" />
@@ -41,7 +42,8 @@ const Profile = props => {
           </Grid>
         </Grid>
       </Grid>
-    </div>;
+    </div>
+  );
 };
 
 Profile.propTypes = {

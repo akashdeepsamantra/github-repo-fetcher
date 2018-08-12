@@ -215,3 +215,10 @@ strong {
   height: 170px;
   background-color: rgba(205, 210, 212, 0.774);
 }
+
+.username {
+  display: inline-block;
+  float: right;
+  padding: 3px;
+  color: #fff;
+}

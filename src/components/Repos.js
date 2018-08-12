@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
 
 import RepoContainer from './RepoContainer';
+import EmptyPage from './EmptyPage';
 
 class Repos extends Component {
   state = {
@@ -14,6 +15,9 @@ class Repos extends Component {
 
   render() {
     const repos = this.props.data;
+    if (repos.length === 0) {
+      return <EmptyPage />
+    } 
     let selectedRepos = repos;
     if (this.state.filterKeyword !== '') {
       selectedRepos = repos.filter(repo => {
@@ -44,6 +48,7 @@ class Repos extends Component {
                       language={repo.language}
                       starCount={repo.stargazers_count}
                       forkCount={repo.forks_count}
+                      html_url={repo.html_url}
                     />
                   </Grid>
                 );

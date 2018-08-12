@@ -7,8 +7,7 @@ import Container from './Container';
 const Profile = props => {
   const { user } = props;
   console.log(user);
-  return (
-    <div className="data-container">
+  return <div className="data-container">
       <Grid container spacing={24}>
         <Grid item xs={3}>
           <img src={user.avatar_url} alt="Profile pic" />
@@ -23,27 +22,26 @@ const Profile = props => {
           <Grid container spacing={24}>
             <Grid item xs={6}>
               <div>
-                <Container title="ID" link='' data={user.id} />
-                <Container title="Location" link='' data={user.location} />
-                <Container title="Type" link='' data={user.type} />
-                <Container title="Company" link='' data={user.company} />
+                <Container title="ID" link="" data={user.id} />
+                <Container title="Location" link="" data={user.location} />
+                <Container title="Type" link="" data={user.type} />
+                <Container title="Company" link="" data={user.company} />
                 <Container title="Blog" link={user.blog} data={user.blog} />
-                <Container title="Site Admin" link='' data={user.side_admin ? 'Yes' : 'No'} />
-                <Container title="Bio" link='' data={user.bio} />
+                <Container title="Site Admin" link="" data={user.side_admin ? 'Yes' : 'No'} />
+                <Container title="Bio" link="" data={user.bio} />
               </div>
             </Grid>
             <Grid className="data" item xs={6}>
-              <Container title="Email" link='' data={user.email} />
+              <Container title="Email" link="" data={user.email} />
               <Container title="Repositories" link={user.repos_url} data={user.public_repos} />
-              <Container title="Gist" link={user.gist_url} data={user.public_gists} />
+              <Container title="Gist" link='' data={user.public_gists} />
               <Container title="Followers" link={user.followers_url} data={user.followers} />
-              <Container title="Following" link={user.following_url} data={user.following} />
+              <Container title="Following" link='' data={user.following} />
             </Grid>
           </Grid>
         </Grid>
       </Grid>
-    </div>
-  );
+    </div>;
 };
 
 Profile.propTypes = {

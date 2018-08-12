@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import { getRepos } from '../util/api';
 import Dashboard from './Dashboard';
+import Spinner from './Spinner';
 
 class Home extends Component {
   constructor(props) {
@@ -10,7 +11,8 @@ class Home extends Component {
       username: 'oliviertassinari',
       showError: false,
       redirect: false,
-      data: null
+      data: null,
+      loading: false
     };
   }
 
@@ -19,6 +21,7 @@ class Home extends Component {
   };
 
   fetchData = () => {
+    this.setState({ loading: true });
     if (this.state.username !== '') {
       getRepos(this.state.username).then(response => {
         if (response.status === 404) {
@@ -50,6 +53,10 @@ class Home extends Component {
       return <Dashboard data={this.state.data} username={this.state.username} />;
     }
 
+    if (this.state.loading) {
+      return <Spinner />
+    }
+
     return (
       <form className="home form">
         <h2>Welcome to Github repo fetcher</h2>
@@ -60,7 +67,7 @@ class Home extends Component {
           onChange={this.changeUsernameHandler}
         />
         <this.showErrorMsg />
-        <button type="button" onClick={this.fetchData}>
+        <button type="button" onClick={(this.fetchData)}>
           Submit
         </button>
       </form>

@@ -8,7 +8,7 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: 'oliviertassinari',
+      username: '',
       showError: false,
       redirect: false,
       data: null,
